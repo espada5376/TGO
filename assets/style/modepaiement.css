@@ -1,182 +1,204 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/* ============================================
+   TOGOMARKET - modepaiement.css (Mode de paiement)
+   ============================================ */
 
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
-body, html{
+body, html {
     margin: 0;
-    background-color: rgb(255, 255, 255);
-    height: 100%;
+    background-color: #F9FAFB;
     font-family: 'Poppins', sans-serif;
+    color: #111827;
 }
 
-body{
-    height: 100vh;
+body {
+    min-height: 100dvh;
     display: flex;
     flex-direction: column;
 }
 
-header{
+/* === HEADER === */
+header {
     height: 60px;
-    width: 90%;
+    width: calc(100% - 32px);
+    max-width: 780px;
     display: flex;
-    padding: 0% 2% 0% 2%;
+    padding: 0 20px;
     align-items: center;
-    background-color: rgb(245, 245, 245);
+    background: #fff;
     font-family: 'Poppins', sans-serif;
     position: sticky;
-    top: 0;
+    top: 16px;
     left: 0;
-    margin: 25px auto;
-    border-radius: 1000px;
-    z-index: 2;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    margin: 16px auto;
+    border-radius: 50px;
+    z-index: 100;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
 }
-header nav{
+
+header nav {
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 60px;
-    
-}
-header a{
-    text-decoration: none;
-    color: black;
 }
 
-h1{
+header a {
+    text-decoration: none;
+    color: #111827;
+}
+
+nav a:first-child {
+    padding: 0 5px;
+    font-size: 19px;
+    font-weight: 800;
+}
+
+.tf { color: #FF4017; }
+.ux { color: #6B7280; }
+
+/* === NAV BUTTONS === */
+.hstatus {
+    transition: background 0.2s;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 42px;
+    width: 42px;
+}
+
+.hstatus:hover { background: #F3F4F6; }
+.hstatus:active { background: #E5E7EB !important; }
+
+.hstatus1 {
+    transition: background 0.2s;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 42px;
+    width: fit-content;
+    padding: 0 12px;
+    gap: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    border: 2px solid #E5E7EB;
+}
+
+.hstatus1:hover { background: #F9FAFB; }
+.hstatus1:active { background: #F3F4F6 !important; }
+
+/* === PAGE TITLE === */
+h1 {
     font-family: 'Poppins', sans-serif;
     text-align: center;
-    margin: 2%;
-    font-weight: 800;
+    margin: 12px auto 20px;
+    font-weight: 700;
     color: #FF4017;
-}
-.ux{
-    color: #4B5563;
+    font-size: 24px;
 }
 
-.tf{
-    color: #FF4017;
-}
-
-main{
-    padding: 5px;
+/* === MAIN CONTENT === */
+main {
+    padding: 8px 20px;
     flex: 1;
     display: flex;
     flex-direction: column;
-        align-items: center;
-}
-
-.hstatus{
-    transition: background 0.5s ease-out;
-    border-radius: 250px;
-    display: flex;
     align-items: center;
-    justify-content: center;
-    height: 50px;
-    width: 50px;
-}
-.hstatus:active{
-    background: rgb(75, 75, 75) !important;
-}
-.hstatus:hover{
-    background: rgb(209, 209, 209);
 }
 
-.hstatus1{
-    transition: background 0.5s ease-out;
-    border-radius: 250px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 50px;
-    width: fit-content;
-    padding: 0px 5px;
-}
-.hstatus1:active{
-    background: rgb(209, 209, 209) !important;
-}
-.hstatus1:hover{
-    background: rgb(209, 209, 209);
-}
+p { text-align: center; font-size: 15px; color: #6B7280; }
 
-form{
+/* === FORM === */
+form {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 6px;
-    max-width: 500px;
-    margin-top: 20px;
+    gap: 8px;
+    max-width: 480px;
+    margin-top: 24px;
 }
 
-form label{
-    width: 200px;
+form label {
+    width: auto;
     text-align: center;
+    font-size: 14px;
+    color: #374151;
+    font-weight: 500;
 }
 
-p{
-    text-align: center;
-}
-
-
-button[type="submit"]{
-	height: 2.5rem;
-    box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 6px 0px;
-    background: linear-gradient(180deg, rgb(22, 22, 18) 0%, rgb(43, 44, 46) 100%) rgba(0, 0, 0, 0);
-    color: #FFFFFF;
+/* === SUBMIT BUTTON === */
+button[type="submit"] {
+    height: 50px;
+    background: #FF4017;
+    color: #fff;
     cursor: pointer;
-    transition: background-color 0.5s ease-out;
-    border-radius: 10px;
+    transition: background 0.2s, transform 0.15s;
+    border-radius: 12px;
     border: none;
-    padding: 10px;
-    width: 50%;
-
-}
-button[type="submit"]:hover{
-    cursor: pointer;   
-}
-button[type="submit"]:active{
-    transform: translateY(4px);
-    box-shadow: 0 0 0 #1e40af;
-}
-
-/*footer*/
-
-footer{
-    background: linear-gradient(135deg, #000000, #2b2b2b);
-    color: #FFFFF0;
+    padding: 0 28px;
+    width: 60%;
+    font-size: 16px;
+    font-weight: 600;
     font-family: 'Poppins', sans-serif;
+    margin-top: 8px;
 }
 
-.ca{
-    color: #FF4017;
-    font-weight: bold;
-}
-.cda{
-    text-align: center;
+button[type="submit"]:hover { background: #E5370F; }
+button[type="submit"]:active { background: #CC2F0B; transform: scale(0.99); }
+
+/* === FOOTER === */
+footer {
+    background: #111827;
+    color: #F9FAFB;
+    font-family: 'Poppins', sans-serif;
+    padding: 24px 0 0;
 }
 
-.contact1 ,.contact2{
+.ca { color: #FF6B47; font-weight: 500; }
+.cda { text-align: center; }
+
+.contact1, .contact2 {
     display: flex;
     flex-direction: column;
     gap: 10px;
     align-items: center;
-    margin: 20px 0;
-}
-.contact1 a{
-    text-decoration: none;
-    color: white;
-}
-#copyright{
-    display: flex;
-    justify-content: center;
-    background-color: black;
-    font-size: 12px;
-    padding: 10px;
+    margin: 12px 0 16px;
 }
 
+.contact1 a {
+    text-decoration: none;
+    color: #D1D5DB;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.2s;
+}
+
+.contact1 a:hover { color: #fff; }
+
+.contact2 a.ca {
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    color: #FF6B47;
+    transition: color 0.2s;
+}
+
+.contact2 a.ca:hover { color: #FF4017; }
+
+#copyright {
+    display: flex;
+    justify-content: center;
+    background: #000;
+    font-size: 12px;
+    padding: 14px;
+    text-align: center;
+    color: #6B7280;
+    margin-top: 16px;
+}

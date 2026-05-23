@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls \"C:\\\\xampp\" 2>&1)",
+      "Bash(Start-Process \"C:\\\\xampp\\\\apache_start.bat\" -WindowStyle Hidden)",
+      "Bash(Start-Sleep -Seconds 3)",
+      "Bash(curl -s http://localhost/)",
+      "PowerShell(Start-Process \"C:\\\\xampp\\\\apache_start.bat\" -WindowStyle Hidden; Start-Sleep -Seconds 4; try { $r = Invoke-WebRequest -Uri \"http://localhost/\" -TimeoutSec 5 -UseBasicParsing; \"Apache OK: $\\($r.StatusCode\\)\" } catch { \"Apache non accessible: $_\" })",
+      "PowerShell($r = Invoke-WebRequest -Uri \"http://localhost/TogoMarket/TGO/index.php?page=home\" -TimeoutSec 10 -UseBasicParsing; $r.Content | Select-String -Pattern \"stylesheet|script\" | Select-Object -First 15)",
+      "Bash(findstr /n \"AllowOverride\" \"C:\\\\xampp\\\\apache\\\\conf\\\\httpd.conf\")",
+      "Bash(Select-String -Path \"C:\\\\xampp\\\\apache\\\\conf\\\\httpd.conf\" -Pattern \"AllowOverride\")",
+      "Bash(Select-Object -First 10)",
+      "PowerShell(& \"C:\\\\xampp\\\\apache\\\\bin\\\\httpd.exe\" -t 2>&1)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code} size=%{size_download}\" \"http://localhost/TGO/\")",
+      "Bash(curl -s -o /dev/null -w \"%{http_code} size=%{size_download}\" \"http://localhost/TGO/index.php?page=home\")",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" \"http://localhost/\")",
+      "Bash(curl -s -o /dev/null -w \" %{http_code}\" \"http://localhost/TogoMarket/TGO/index.php?page=home\")",
+      "Bash(./apache_stop.bat)",
+      "Bash(./apache_start.bat)",
+      "Bash(\"/c/xampp/apache/bin/httpd.exe\" -k restart)"
+    ]
+  }
+}

@@ -4,20 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Connexion TogoMarket</title>
-    <link
-  rel="stylesheet"
-  href="/assets/style/signIn.css?v=<?= filemtime($_SERVER['DOCUMENT_ROOT'] . '/assets/style/signIn.css') ?>"
->
-
+    <link rel="stylesheet" href="<?= ASSETS_URL ?>style/signIn.css?v=<?= filemtime(ASSETS_PATH.'style/signIn.css') ?>">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <script
-  src="/assets/js/signIn.js?v=<?= filemtime($_SERVER['DOCUMENT_ROOT'] . '/assets/js/signIn.js') ?>"
-  defer>
-</script>
-
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <link rel="icon" type="image/svg+xml" href="/assets/file (1).svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <script src="<?= ASSETS_URL ?>js/signIn.js?v=<?= filemtime(ASSETS_PATH.'js/signIn.js') ?>" defer></script>
+    <link rel="icon" type="image/svg+xml" href="<?= ASSETS_URL ?>file-(1).svg">
     
     
     
@@ -32,7 +23,7 @@
 
 </head>
 <body>
-    <a class='titre' href='/'><h1><span class='tf'>Togo</span>Market</h1></a>
+    <a class='titre' href='<?= url() ?>'><h1><span class='tf'>Togo</span>Market</h1></a>
     <main class="formulaire">
         <div class='info'>
         <h2>Connexion</h2>
@@ -59,7 +50,7 @@
                     
             <button type="submit" name="connecter"><i class="fa-solid fa-arrow-right-to-bracket"></i>se connecter</button>
             <div class="suggestion">
-                <p>Vous n'avez pas de compte?</p><a href="/inscription">créez un compte</a>
+                <p>Vous n'avez pas de compte?</p><a href="<?= url('inscription') ?>">créez un compte</a>
             </div>
         </form>
         

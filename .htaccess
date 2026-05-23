@@ -1,0 +1,78 @@
+# =========================
+# CONFIG PHP
+# =========================
+php_value display_errors On
+php_value mbstring.http_input auto
+php_value date.timezone Africa/Accra
+
+AddType application/manifest+json .json
+
+# =========================
+# REWRITE
+# =========================
+RewriteEngine On
+RewriteBase /TogoMarket/TGO/
+
+# =========================
+# SÉCURITÉ
+# =========================
+Options -Indexes
+
+# =========================
+# ERREURS
+# =========================
+
+
+
+# =========================
+# IGNORER FICHIERS EXISTANTS
+# =========================
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# =========================
+# ROUTES SEO
+# =========================
+
+# Annonce
+RewriteRule ^annonce/([a-z0-9-]+)/([a-z0-9-]+)-([0-9]+)$ index.php?page=annonce&ville=$1&id=$3 [QSA,L]
+
+# Profil boutique
+RewriteRule ^profil-boutique/([a-z0-9-]+)/([a-z0-9-]+)-([0-9]+)$ index.php?page=profil-boutique&ville=$1&id=$3 [QSA,L]
+
+# Search
+RewriteRule ^search/(.+)$ index.php?page=search&q=$1 [B,QSA,L]
+
+# =========================
+# ROUTES SIMPLES
+# =========================
+RewriteRule ^publier-une-annonce$ index.php?page=publier-une-annonce [QSA,L]
+RewriteRule ^403$ index.php?page=accesrefuse [QSA,L]
+RewriteRule ^apresCommande$ index.php?page=apresCommande [QSA,L]
+RewriteRule ^boutique$ index.php?page=boutique [QSA,L]
+RewriteRule ^deconnexion$ index.php?page=deconnexion [QSA,L]
+RewriteRule ^infoCompte$ index.php?page=infoCompte [QSA,L]
+RewriteRule ^mesCommandes$ index.php?page=mesCommandes [QSA,L]
+RewriteRule ^panier$ index.php?page=panier [QSA,L]
+RewriteRule ^profil$ index.php?page=profil [QSA,L]
+RewriteRule ^voir-mes-annonces$ index.php?page=voir-mes-annonces [QSA,L]
+RewriteRule ^connexion$ index.php?page=connexion [QSA,L]
+RewriteRule ^inscription$ index.php?page=inscription [QSA,L]
+RewriteRule ^home$ index.php?page=home [QSA,L]
+RewriteRule ^modifier-annonce$ index.php?page=modifier-annonce [QSA,L]
+RewriteRule ^cgu$ index.php?page=cgu [QSA,L]
+RewriteRule ^pc$ index.php?page=pc [QSA,L]
+RewriteRule ^share$ index.php?page=share [QSA,L]
+RewriteRule ^modepaiement$ index.php?page=modepaiement [QSA,L]
+RewriteRule ^creer-ma-boutique$ index.php?page=creer-ma-boutique [QSA,L]
+
+# =========================
+# EXCEPTION
+# =========================
+RewriteRule ^manifest\.json$ - [L]
+
+# =========================
+# FALLBACK GLOBAL (TRÈS IMPORTANT)
+# =========================
+RewriteRule ^.*$ index.php?page=home [QSA,L]

@@ -6,12 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
-    <script src="/../assets/js/infocompte.js?v=<?= filemtime(__DIR__.'/../assets/js/infocompte.js') ?>" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="<?= ASSETS_URL ?>style/infocompte.css?v=<?= filemtime(ASSETS_PATH.'style/infocompte.css') ?>">
+    <script src="<?= ASSETS_URL ?>js/infocompte.js?v=<?= filemtime(ASSETS_PATH.'js/infocompte.js') ?>" defer></script>
     <title>Infos Compte TogoMarket</title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="icon" type="image/svg+xml" href="assets/file (1).svg">
-    <link rel="stylesheet" href="/../assets/style/infocompte.css?v=<?= filemtime(__DIR__.'/../assets/style/infocompte.css') ?>" />
+    <link rel="icon" type="image/svg+xml" href="<?= ASSETS_URL ?>file-(1).svg">
     
     
     

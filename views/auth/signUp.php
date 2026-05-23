@@ -1,25 +1,14 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>inscription TogoMarket</title>
-<link
-  rel="stylesheet"
-  href="/assets/style/signUp.css?v=<?= filemtime($_SERVER['DOCUMENT_ROOT'] . '/assets/style/signUp.css') ?>"
->
-
+    <link rel="stylesheet" href="<?= ASSETS_URL ?>style/signUp.css?v=<?= filemtime(ASSETS_PATH.'style/signUp.css') ?>">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <script
-  src="/assets/js/signUp.js?v=<?= filemtime($_SERVER['DOCUMENT_ROOT'] . '/assets/js/signUp.js') ?>"
-  defer>
-</script>
-
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <script src='/assets/js/signUp.js?v=<?= filemtime(__DIR__ . '/assets/js/signUp.js') ?>' defer></script>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <link rel="icon" type="image/svg+xml" href="assets/file (1).svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <script src="<?= ASSETS_URL ?>js/signUp.js?v=<?= filemtime(ASSETS_PATH.'js/signUp.js') ?>" defer></script>
+    <link rel="icon" type="image/svg+xml" href="<?= ASSETS_URL ?>file-(1).svg">
     
     
     
@@ -34,7 +23,7 @@
 
 </head>
 <body>
-    <a class='titre' href='/'><h1><span class='tf'>Togo</span>Market</h1></a>
+    <a class='titre' href='<?= url() ?>'><h1><span class='tf'>Togo</span>Market</h1></a>
     <main class="formulaire">
         <div class='info'>
         <h2>Création de compte</h2>
@@ -76,7 +65,7 @@
 <label class="checkbox">
   <input id='cgv' type="checkbox" required/>
   <span class="checkmark"></span>
-  <section class="label"><span>J’accepte</span><a href='/cgu' > les conditions général d'utilisation</a></section>
+  <section class="label"><span>J'accepte</span><a href="<?= url('cgu') ?>"> les conditions général d'utilisation</a></section>
 </label>
             <?php if (isset($_SESSION['error'])): ?>
     			<p class="message">
@@ -88,7 +77,7 @@
         </form>
         
         <div class="suggestion">
-            <p>Vous avez déja un compte?</p><a href="/connexion">se connecter</a>
+            <p>Vous avez déja un compte?</p><a href="<?= url('connexion') ?>">se connecter</a>
         
     </main>
     <br/>

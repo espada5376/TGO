@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>   
     
-<link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/file(1).png">    
-<link rel="icon" type="image/svg+xml" href="/assets/file (1).svg">
+<link rel="apple-touch-icon" sizes="180x180" href="<?= ASSETS_URL ?>icons/file(1).png">
+<link rel="icon" type="image/svg+xml" href="<?= ASSETS_URL ?>file-(1).svg">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <!-- Android / Chrome -->
 <meta name="mobile-web-app-capable" content="yes">
@@ -16,10 +16,10 @@
 
 <title>TogoMarket – Achetez et vendez facilement en ligne au Togo</title>
 <meta name="title" content="TogoMarket – Achetez et vendez facilement en ligne au Togo" />
-<meta name="description" content="Marketplace togolaise de vente et d’achat en ligne">
+<meta name="description" content="Marketplace togolaise de vente et d'achat en ligne">
        
 <meta property="og:title" content="TogoMarket – Achetez et vendez facilement en ligne au Togo" />
-<meta property="og:description" content="Marketplace togolaise de vente et d’achat en ligne" />
+<meta property="og:description" content="Marketplace togolaise de vente et d'achat en ligne" />
 <meta property="og:image" content="https://tg.infinityfreeapp.com/assets/file-(1).svg" />
 <meta property="og:url" content="https://tg.infinityfreeapp.com/" />
 <meta property="og:type" content="website" />
@@ -27,18 +27,15 @@
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:url" content="https://tg.infinityfreeapp.com/" />
 <meta property="twitter:title" content="TogoMarket – Achetez et vendez facilement en ligne au Togo" />
-<meta property="twitter:description" content="Marketplace togolaise de vente et d’achat en ligne" />
+<meta property="twitter:description" content="Marketplace togolaise de vente et d'achat en ligne" />
 <meta property="twitter:image" content="https://tg.infinityfreeapp.com/assets/file-(1).svg" />
 
-<link rel="stylesheet" href="/../assets/style/index.css?v=<?= filemtime(__DIR__.'/../assets/style/index.css') ?>" />
+<link rel="stylesheet" href="<?= ASSETS_URL ?>style/index.css?v=<?= filemtime(ASSETS_PATH.'style/index.css') ?>">
+<link rel="stylesheet" href="<?= ASSETS_URL ?>style/annonce.css?v=<?= filemtime(ASSETS_PATH.'style/annonce.css') ?>">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-<link
-  rel="stylesheet"
-  href="/assets/style/annonce.css?v=<?= filemtime($_SERVER['DOCUMENT_ROOT'] . '/assets/style/annonce.css') ?>"
-/>  
-<link rel="stylesheet" href="/swiper-bundle.css"/>
-<script src="/swiper-bundle.js" defer></script>
-<script src='/../assets/js/search.js?v=<?= filemtime(__DIR__.'/../assets/js/search.js') ?>' defer></script>  
+<link rel="stylesheet" href="<?= url('swiper-bundle.css') ?>">
+<script src="<?= url('swiper-bundle.js') ?>" defer></script>
+<script src="<?= ASSETS_URL ?>js/search.js?v=<?= filemtime(ASSETS_PATH.'js/search.js') ?>" defer></script>  
     
 <script>
   window.dataLayer = window.dataLayer || [];

@@ -8,14 +8,14 @@ function startSession() {
 
 startSession();
 
+require_once __DIR__ . '/app/core/config.php';
 require_once __DIR__ . '/app/core/db.php';
 require_once __DIR__ . '/app/core/jsonResponse.php';
 require_once __DIR__ . '/app/controllers/pages.php';
 require_once __DIR__ . '/app/controllers/apicontroller.php';
 
-function url(string $path): string {
-    $base = 'http://' . $_SERVER['HTTP_HOST'] . '/TGO/';
-    return $base . ltrim($path, '/');
+function url(string $path = ''): string {
+    return BASE_URL . ltrim($path, '/');
 }
 
 function slugifyBoutique($text) {

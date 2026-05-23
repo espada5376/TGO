@@ -1,15 +1,15 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Conditions Générales d’Utilisation | TogoMarket</title>
-    <link rel="stylesheet" href="/assets/style/style.css"> <!-- même CSS que la politique -->
+    <title>Conditions Générales d'Utilisation | TogoMarket</title>
+    <link rel="stylesheet" href="<?= ASSETS_URL ?>style/style.css">
     <link rel="icon" type="image/svg+xml" href="assets/file-(1).svg">
 </head>
 <body>
     <header>
-    	<h1>Conditions Générales d’Utilisation</h1>
+    	<h1>Conditions Générales d'Utilisation</h1>
     	<p>TogoMarket — Dernière mise à jour : [à compléter]</p>
     </header>
     <div class="container">
@@ -31,13 +31,13 @@
 
         <section class="section">
             <h2>2. Objet</h2>
-            <p>Les présentes Conditions Générales d’Utilisation (CGU) définissent :</p>
+            <p>Les présentes Conditions Générales d'Utilisation (CGU) définissent :</p>
             <ul>
-                <li>Les règles d’utilisation de la plateforme</li>
+                <li>Les règles d'utilisation de la plateforme</li>
                 <li>Les droits et obligations des Utilisateurs</li>
                 <li>Le fonctionnement des commandes et livraisons</li>
             </ul>
-            <p>Toute utilisation de la plateforme implique l’acceptation des présentes conditions.</p>
+            <p>Toute utilisation de la plateforme implique l'acceptation des présentes conditions.</p>
         </section>
 
         <section class="section">
@@ -48,7 +48,7 @@
                 <li><strong>Acheteur</strong> : utilisateur passant commande</li>
                 <li><strong>Vendeur</strong> : utilisateur proposant un produit à la vente</li>
                 <li><strong>Commande</strong> : achat validé via la plateforme</li>
-                <li><strong>Livreur</strong> : employé salarié de TogoMarket chargé d’assurer la livraison</li>
+                <li><strong>Livreur</strong> : employé salarié de TogoMarket chargé d'assurer la livraison</li>
                 <li><strong>Produit</strong> : bien proposé à la vente</li>
             </ul>
         </section>
@@ -57,11 +57,11 @@
             <h2>4. Modèle de fonctionnement</h2>
             <h3>4.1 Processus de commande</h3>
             <ul>
-                <li>L’Acheteur passe commande sur la plateforme</li>
+                <li>L'Acheteur passe commande sur la plateforme</li>
                 <li>Le Vendeur prépare le produit</li>
                 <li>Un Livreur salarié de TogoMarket récupère le produit</li>
-                <li>Le produit est livré à l’Acheteur</li>
-                <li>L’Acheteur paie en espèces au Livreur</li>
+                <li>Le produit est livré à l'Acheteur</li>
+                <li>L'Acheteur paie en espèces au Livreur</li>
                 <li>Le Livreur effectue un transfert du montant au Vendeur via :
                     <ul>
                         <li>Mixx By Yas</li>
@@ -82,7 +82,7 @@
             <p>En conséquence :</p>
             <ul>
                 <li>TogoMarket assume la responsabilité des actes de ses livreurs dans le cadre de leurs fonctions</li>
-                <li>Toute faute commise par un livreur dans l’exercice de sa mission engage la responsabilité de TogoMarket, sans préjudice des sanctions disciplinaires internes</li>
+                <li>Toute faute commise par un livreur dans l'exercice de sa mission engage la responsabilité de TogoMarket, sans préjudice des sanctions disciplinaires internes</li>
             </ul>
         </section>
 
@@ -102,13 +102,13 @@
         </section>
 
         <section class="section">
-            <h2>7. Obligations de l’Acheteur</h2>
+            <h2>7. Obligations de l'Acheteur</h2>
             <ul>
                 <li>Fournir une adresse exacte</li>
                 <li>Être présent lors de la livraison</li>
                 <li>Payer le montant exact indiqué</li>
             </ul>
-            <p>L’Acheteur doit vérifier le produit avant paiement. Un refus abusif peut entraîner :</p>
+            <p>L'Acheteur doit vérifier le produit avant paiement. Un refus abusif peut entraîner :</p>
             <ul>
                 <li>Suspension temporaire</li>
                 <li>Restriction de compte</li>
@@ -121,8 +121,8 @@
             <p>Le transfert Mobile Money vers le Vendeur est réalisé par TogoMarket via ses employés.</p>
             <p>TogoMarket décline toute responsabilité en cas :</p>
             <ul>
-                <li>D’erreur de numéro Mobile Money fourni par le Vendeur</li>
-                <li>D’indisponibilité temporaire du service Mixx ou Flooz</li>
+                <li>D'erreur de numéro Mobile Money fourni par le Vendeur</li>
+                <li>D'indisponibilité temporaire du service Mixx ou Flooz</li>
             </ul>
         </section>
 
@@ -131,7 +131,7 @@
             <ul>
                 <li>Avant récupération par le livreur → responsabilité du Vendeur</li>
                 <li>Pendant transport → responsabilité de TogoMarket</li>
-                <li>Après paiement et remise → responsabilité de l’Acheteur</li>
+                <li>Après paiement et remise → responsabilité de l'Acheteur</li>
             </ul>
         </section>
 
@@ -162,7 +162,7 @@
             <ul>
                 <li>La gestion des commandes</li>
                 <li>La coordination des livraisons</li>
-                <li>L’amélioration du service</li>
+                <li>L'amélioration du service</li>
             </ul>
             <p>Les données peuvent être partagées avec :</p>
             <ul>
@@ -189,7 +189,7 @@
                 <li>Notification sur la plateforme</li>
                 <li>Email</li>
             </ul>
-            <p>L’utilisation continue vaut acceptation.</p>
+            <p>L'utilisation continue vaut acceptation.</p>
         </section>
 
         <section class="section">

@@ -1,13 +1,13 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-	<link rel="icon" type="image/svg+xml" href="/assets/file (1).svg">
+	<link rel="icon" type="image/svg+xml" href="<?= ASSETS_URL ?>file-(1).svg">
     <title><?= $annonce['titre_annonce'] ?> | TogoMarket</title>
 
 
-	<link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/file(1).png">    
+	<link rel="apple-touch-icon" sizes="180x180" href="<?= ASSETS_URL ?>icons/file(1).png">
 
     <meta name="apple-mobile-web-app-capable" content="yes">
     <!-- Android / Chrome -->
@@ -29,13 +29,11 @@
    
     
     
-    <link rel="stylesheet" href="/../assets/style/command.css?v=<?= filemtime(__DIR__.'/../assets/style/command.css') ?>">
+    <link rel="stylesheet" href="<?= ASSETS_URL ?>style/command.css?v=<?= filemtime(ASSETS_PATH.'style/command.css') ?>">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    
-<link rel="stylesheet" href="/swiper-bundle.css"/>
-
-<script src="/swiper-bundle.js" defer></script>
-<script src="/../assets/js/command.js?v=<?= filemtime(__DIR__.'/../assets/js/command.js') ?>" defer></script>
+    <link rel="stylesheet" href="<?= url('swiper-bundle.css') ?>">
+    <script src="<?= url('swiper-bundle.js') ?>" defer></script>
+    <script src="<?= ASSETS_URL ?>js/command.js?v=<?= filemtime(ASSETS_PATH.'js/command.js') ?>" defer></script>
 
 
 <script>
@@ -215,7 +213,7 @@ gtag('event', 'view_item', {
             <label class="checkbox" for='cgv'>
   <input id='cgv' type="checkbox" required/>
   <span class="checkmark"></span>
-  <section class="label"><span>J’accepte</span><a href='/cgu' > les conditions général d'utilisation</a></section>
+  <section class="label"><span>J'accepte</span><a href='/cgu' > les conditions général d'utilisation</a></section>
 </label>
         <button type='submit' id='envoicommande' class='Ccommander'>Comfirmer la commande</button>
     </form>

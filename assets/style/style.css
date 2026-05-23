@@ -1,89 +1,107 @@
+/* ============================================
+   TOGOMARKET - style.css (CGU / Politique de confidentialité)
+   ============================================ */
+
 :root {
-            --primary: #ff4017;
-            --accent: #16a34a;
-            --text: #1e293b;
-            --light: #f8fafc;
-            --border: #e2e8f0;
-            --titre: #333;
-        }
+    --primary: #FF4017;
+    --accent: #16a34a;
+    --text: #111827;
+    --light: #F9FAFB;
+    --border: #E5E7EB;
+    --titre: #111827;
+}
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background-color: var(--light);
-            color: var(--text);
-            line-height: 1.7;
-            scroll-behavior: smooth;
-        }
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--light);
+    color: var(--text);
+    line-height: 1.7;
+    scroll-behavior: smooth;
+}
 
-        header {
-            color: var(--primary);
-            padding: 40px 20px;
-            text-align: center;
-        }
+/* === HEADER === */
+header {
+    width: 100%;
+    padding: 16px 24px;
+    background: #fff;
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
 
-        header h1 {
-            font-size: 28px;
-            margin-bottom: 10px;
-        }
+header h1 {
+    font-size: 22px;
+    margin-bottom: 4px;
+    color: var(--primary);
+    font-weight: 800;
+}
 
-        header p {
-            font-size: 14px;
-            opacity: 0.9;
-        }
+header p {
+    font-size: 14px;
+    opacity: 0.7;
+    color: #374151;
+}
 
-        .container {
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 30px;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-        }
+/* === CONTENT CONTAINER === */
+.container {
+    max-width: 860px;
+    margin: 40px auto;
+    padding: 36px 40px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+    border: 1px solid var(--border);
+}
 
-        h2 {
-            margin-top: 30px;
-            margin-bottom: 10px;
-            font-size: 20px;
-            color: var(--titre);
-            border-left: 4px solid var(--accent);
-            padding-left: 10px;
-        }
+/* === TYPOGRAPHY === */
+h2 {
+    margin-top: 36px;
+    margin-bottom: 12px;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--titre);
+    border-left: 4px solid var(--primary);
+    padding-left: 12px;
+}
 
-        p {
-            margin-bottom: 15px;
-            font-size: 15px;
-        }
+p {
+    margin-bottom: 16px;
+    font-size: 15px;
+    color: #374151;
+    line-height: 1.75;
+}
 
-        ul {
-            margin: 10px 0 20px 20px;
-        }
+ul {
+    margin: 10px 0 24px 24px;
+}
 
-        li {
-            margin-bottom: 8px;
-            font-size: 15px;
-        }
+li {
+    margin-bottom: 10px;
+    font-size: 15px;
+    color: #374151;
+    line-height: 1.6;
+}
 
-        footer {
-            text-align: center;
-            padding: 20px;
-            font-size: 14px;
-            color: #64748b;
-            margin-top: 40px;
-        }
+/* === FOOTER === */
+footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 13px;
+    color: #9CA3AF;
+    margin-top: 40px;
+    border-top: 1px solid var(--border);
+    background: #fff;
+}
 
-        @media (max-width: 768px) {
-            .container {
-                padding: 20px;
-                margin: 20px;
-            }
+@media (max-width: 768px) {
+    .container {
+        padding: 24px 20px;
+        margin: 20px 16px;
+        border-radius: 12px;
+    }
 
-            header h1 {
-                font-size: 22px;
-            }
-        }
+    header h1 {
+        font-size: 18px;
+    }
+}

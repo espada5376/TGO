@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>   
     
-<link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/file(1).png">    
+<link rel="apple-touch-icon" sizes="180x180" href="<?= ASSETS_URL ?>icons/file(1).png">
 
 <meta name="apple-mobile-web-app-capable" content="yes">
 <!-- Android / Chrome -->
@@ -11,17 +11,17 @@
 <meta name="apple-mobile-web-app-title" content="TogoMarket">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-<link rel="manifest" href="/manifest.json">
+<link rel="manifest" href="<?= url('manifest.json') ?>">
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 <title>TogoMarket – Achetez et vendez facilement en ligne au Togo</title>
 <meta name="title" content="TogoMarket – Achetez et vendez facilement en ligne au Togo" />
-<meta name="description" content="Marketplace togolaise de vente et d’achat en ligne">
+<meta name="description" content="Marketplace togolaise de vente et d'achat en ligne">
        
 <meta property="og:title" content="TogoMarket – Achetez et vendez facilement en ligne au Togo" />
-<meta property="og:description" content="Marketplace togolaise de vente et d’achat en ligne" />
+<meta property="og:description" content="Marketplace togolaise de vente et d'achat en ligne" />
 <meta property="og:image" content="https://tg.infinityfreeapp.com/assets/file-(1).svg" />
 <meta property="og:url" content="https://tg.infinityfreeapp.com/" />
 <meta property="og:type" content="website" />
@@ -29,18 +29,16 @@
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:url" content="https://tg.infinityfreeapp.com/" />
 <meta property="twitter:title" content="TogoMarket – Achetez et vendez facilement en ligne au Togo" />
-<meta property="twitter:description" content="Marketplace togolaise de vente et d’achat en ligne" />
+<meta property="twitter:description" content="Marketplace togolaise de vente et d'achat en ligne" />
 <meta property="twitter:image" content="https://tg.infinityfreeapp.com/assets/file-(1).svg" />
 
-<link rel="icon" type="image/svg+xml" href="assets/file-(1).svg">
-<link rel="stylesheet" href="/../assets/style/index.css?v=<?= filemtime(__DIR__.'/../assets/style/index.css') ?>" />
-<link rel="stylesheet" href="/../assets/style/annonce.css?v=<?= filemtime(__DIR__.'/../assets/style/annonce.css') ?>" />
+<link rel="icon" type="image/svg+xml" href="<?= ASSETS_URL ?>file-(1).svg">
+<link rel="stylesheet" href="<?= ASSETS_URL ?>style/index.css?v=<?= filemtime(ASSETS_PATH.'style/index.css') ?>">
+<link rel="stylesheet" href="<?= ASSETS_URL ?>style/annonce.css?v=<?= filemtime(ASSETS_PATH.'style/annonce.css') ?>">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-
-         
-<link rel="stylesheet" href="/swiper-bundle.css"/>
-<script src="/swiper-bundle.js" defer></script>
-<script src='/../assets/js/index.js?v=<?= filemtime(__DIR__.'/../assets/js/index.js') ?>' defer></script>  
+<link rel="stylesheet" href="<?= url('swiper-bundle.css') ?>">
+<script src="<?= url('swiper-bundle.js') ?>" defer></script>
+<script src="<?= ASSETS_URL ?>js/index.js?v=<?= filemtime(ASSETS_PATH.'js/index.js') ?>" defer></script>
     
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -60,11 +58,11 @@
     <header>
         <nav>
     		<div class = 'containerf'>
-                <a href="/"><span class='tf'>Togo</span>Market</a> 
+                <a href="<?= url() ?>"><span class='tf'>Togo</span>Market</a>
                 <div class="search-container">
 
                     <div class='search'>
-                        <button type='button' class='cats' >catégories<img src='/assets/down-arrow-5-svgrepo-com.svg' width='20px'/></button>
+                        <button type='button' class='cats' >catégories<img src='<?= ASSETS_URL ?>down-arrow-5-svgrepo-com.svg' width='20px'/></button>
     					<form id='formr' method = 'POST'>
                             <input type="text" id="searchInput" placeholder="Que veux-tu acheter ?" autocomplete="on" required>
                             <button class='recherche' id='recherche' type='submit'>
@@ -77,12 +75,12 @@
                     <div id="searchResults" class="results"></div>
                     </div>
                 <div class="panier-produit">
-                    <a class='hpanier' href='/panier'>
-                        <img src='/assets/basket-svgrepo-com.svg' width='20px'/>
+                    <a class='hpanier' href='<?= url('panier') ?>'>
+                        <img src='<?= ASSETS_URL ?>basket-svgrepo-com.svg' width='20px'/>
                         <span class="like-count pani"></span>
                     </a>
                 </div>
-                <a class='hstatus' href="<?= isset($_SESSION['id']) && isset($_SESSION['tel']) ? '/profil' : '/connexion' ?>">
+                <a class='hstatus' href="<?= isset($_SESSION['id']) && isset($_SESSION['tel']) ? url('profil') : url('connexion') ?>">
                     <?= isset($_SESSION['id']) && isset($_SESSION['tel']) 
                     ? '<svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 16 16" fill="none">
 <path d="M8 7C9.65685 7 11 5.65685 11 4C11 2.34315 9.65685 1 8 1C6.34315 1 5 2.34315 5 4C5 5.65685 6.34315 7 8 7Z" fill="#000000"/>
@@ -92,7 +90,7 @@
                 </a>
 			</div>
                 <div class='searchf'>
-                        <button type='button' class='cats' >catégories<img src='/assets/down-arrow-5-svgrepo-com.svg' width='20px'/></button>
+                        <button type='button' class='cats' >catégories<img src='<?= ASSETS_URL ?>down-arrow-5-svgrepo-com.svg' width='20px'/></button>
                     	<form id='formrf' method = 'POST'>
                             <input type="text" id="searchInputf" placeholder="Que veux-tu acheter ?" autocomplete="on" required>
                             <button class='recherche' id='recherchef' type='submit'>
@@ -122,7 +120,7 @@
 <div id='cat'>
     <div class='catdiv'>
         <h2 >Catégories</h2>
-        <a href='/search' class='pluscat'>+ catégories</a>
+        <a href='<?= url('search') ?>' class='pluscat'>+ catégories</a>
     </div>
     <div class='boss'>
         <div class="swiper-button-prev"></div>

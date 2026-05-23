@@ -1,27 +1,22 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Commandes recue TogoMarket</title>
-    <link rel="stylesheet" href="/assets/style/boutique.css?v=<?= filemtime($_SERVER['DOCUMENT_ROOT'] . '/assets/style/boutique.css') ?>"/>
+    <link rel="stylesheet" href="<?= ASSETS_URL ?>style/boutique.css?v=<?= filemtime(ASSETS_PATH.'style/boutique.css') ?>">
+    <link rel="stylesheet" href="<?= ASSETS_URL ?>style/annonce.css?v=<?= filemtime(ASSETS_PATH.'style/annonce.css') ?>">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
-<script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
-
-<link
-  rel="stylesheet"
-  href="/assets/style/annonce.css?v=<?= filemtime($_SERVER['DOCUMENT_ROOT'] . '/assets/style/annonce.css') ?>"
-/>    
-    
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-<script src='../../assets/js/boutique.js' defer></script>
-<link rel="icon" type="image/svg+xml" href="assets/file (1).svg">
+    <link rel="stylesheet" href="<?= url('swiper-bundle.css') ?>">
+    <script src="<?= url('swiper-bundle.js') ?>" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <script src="<?= ASSETS_URL ?>js/boutique.js?v=<?= filemtime(ASSETS_PATH.'js/boutique.js') ?>" defer></script>
+    <link rel="icon" type="image/svg+xml" href="<?= ASSETS_URL ?>file-(1).svg">
     
     
       <!-- Open Graph -->
   <meta property="og:title" content="Togomarket – Achetez et vendez au Togo">
-  <meta property="og:description" content="Plateforme togolaise de vente et d’achat en ligne.">
+  <meta property="og:description" content="Plateforme togolaise de vente et d'achat en ligne.">
   <meta property="og:image" content="https://tg.infinityfreeapp.com/assets/file (1).png">
   <meta property="og:url" content="https://tg.infinityfreeapp.com/">
   <meta property="og:type" content="website">
@@ -41,8 +36,8 @@
 <body>
     <header>
         <nav>
-        <a class='hstatus' href="/profil"><i class="fa-solid fa-arrow-left"></i></a>
-    	<a	class='hstatus1' href="/voir-mes-annonces">Voir mes annonces</a>
+        <a class='hstatus' href="<?= url('profil') ?>"><i class="fa-solid fa-arrow-left"></i></a>
+    	<a	class='hstatus1' href="<?= url('voir-mes-annonces') ?>">Voir mes annonces</a>
         </nav>
     </header>
 

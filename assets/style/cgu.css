@@ -1,31 +1,53 @@
-/*footer*/
+/* ============================================
+   TOGOMARKET - cgu.css (Footer partagé CGU/PC)
+   ============================================ */
 
-footer{
-    background: linear-gradient(135deg, #000000, #2b2b2b);
-    color: #FFFFF0;
+footer {
+    background: #111827;
+    color: #F9FAFB;
     font-family: 'Poppins', sans-serif;
+    padding: 24px 0 0;
 }
 
-.contact1 ,.contact2{
+.contact1, .contact2 {
     display: flex;
     flex-direction: column;
     gap: 10px;
     align-items: center;
-    margin: 20px 0;
+    margin: 12px 0 16px;
 }
-.contact1 a{
+
+.contact1 a {
     text-decoration: none;
-    color: white;
+    color: #D1D5DB;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.2s;
 }
 
-.ca{
-    color: #FF4017;
+.contact1 a:hover { color: #fff; }
+
+.ca { color: #FF6B47; }
+
+.contact2 a.ca {
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    color: #FF6B47;
+    transition: color 0.2s;
 }
 
-#copyright{
+.contact2 a.ca:hover { color: #FF4017; }
+
+#copyright {
     display: flex;
     justify-content: center;
-    background-color: black;
+    background: #000;
     font-size: 12px;
-    padding: 10px;
+    padding: 14px;
+    text-align: center;
+    color: #6B7280;
+    margin-top: 16px;
 }
