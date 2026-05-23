@@ -14,7 +14,7 @@ require_once __DIR__ . '/app/controllers/pages.php';
 require_once __DIR__ . '/app/controllers/apicontroller.php';
 
 function url(string $path): string {
-    $base = 'https://tg.infinityfreeapp.com/';
+    $base = 'http://' . $_SERVER['HTTP_HOST'] . '/TGO/';
     return $base . ltrim($path, '/');
 }
 

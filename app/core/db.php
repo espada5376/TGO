@@ -1,8 +1,8 @@
 <?php
-$host = 'sql100.infinityfree.com';
-$dbname = 'if0_40490989_Togo';
-$user = 'if0_40490989';
-$password = 'QGE1TDdQTpeWk';
+$host = 'localhost';
+$dbname = 'tg';
+$user = 'root';
+$password = '';
 
 try {
     $conn = new PDO(
