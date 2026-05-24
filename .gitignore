@@ -1,0 +1,17 @@
+# ── Environnement (NE JAMAIS committer) ──────────────
+.env
+
+# ── Uploads utilisateurs ─────────────────────────────
+assets/product/
+assets/logo_boutique/
+
+# ── Cache / logs ─────────────────────────────────────
+*.log
+*.cache
+
+# ── IDE / OS ──────────────────────────────────────────
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp

@@ -1,4 +1,4 @@
-const BASE_URL = window.location.origin + '/'
+const BASE_URL = window.__BASE_URL || (window.location.origin + '/')
 
 const retour = document.getElementById("back");
     
@@ -67,7 +67,7 @@ const div = document.createElement('div');
 imgWrapper.className = "img-wrapper skeleton";
     
 const img = document.createElement('img')
-img.src = `${BASE_URL}/assets/product/${data.photo_annonce}`
+img.src = `${BASE_URL}assets/product/${data.photo_annonce}`
 img.alt = `${data.titre_annonce}`
 
 img.loading = "lazy";
@@ -190,70 +190,60 @@ const status3 = 'produit livré et payé';
 
 const routes = {
     '#/': async () => {
-
-        loader.style.display = 'block'
-        const response = await fetch(`index.php?page=api&action=listecommandes&status=${status1}`);
-        const data = await response.json();
-        loader.style.display = 'none'
-
-        cmd.textContent = '';
-
-        if(data.success && data.data.length > 0){
-            console.log(data)
-            data.data.forEach(commande => {
-                CommandeCard(commande);
-            });
-        }else{
-            console.log(data)
-            const p = document.createElement('p')
-            p.textContent = 'Aucune nouvelle commande pour le moment.';
-            p.classList.add('aucune')
-            cmd.appendChild(p)
+        loader.style.display = 'block';
+        cmd.innerHTML = '';
+        try {
+            const response = await fetch(`index.php?page=api&action=listecommandes&status=${status1}`);
+            if (!response.ok) throw new Error(`Erreur serveur (${response.status})`);
+            const data = await response.json();
+            loader.style.display = 'none';
+            if (data.success && data.data.length > 0) {
+                data.data.forEach(commande => CommandeCard(commande));
+            } else {
+                emptyState(cmd, 'Aucune commande en attente pour le moment.');
+            }
+        } catch (err) {
+            loader.style.display = 'none';
+            errorState(cmd, err.message, () => charger());
         }
-  
     },
+
     '#/cours': async () => {
-
-        loader.style.display = 'block'
-        const response = await fetch(`index.php?page=api&action=listecommandes&status=${status2}`);
-        const data = await response.json();
-        loader.style.display = 'none'
-
-        cmd.textContent = '';
-
-        if(data.success && data.data.length > 0){
-            
-            data.data.forEach(commande => {
-                CommandeCard(commande);
-            });
-        }else{
-            
-            const p = document.createElement('p')
-            p.textContent = 'Aucune nouvelle commande pour le moment.';
-            p.classList.add('aucune')
-            cmd.appendChild(p)
-        }  
+        loader.style.display = 'block';
+        cmd.innerHTML = '';
+        try {
+            const response = await fetch(`index.php?page=api&action=listecommandes&status=${status2}`);
+            if (!response.ok) throw new Error(`Erreur serveur (${response.status})`);
+            const data = await response.json();
+            loader.style.display = 'none';
+            if (data.success && data.data.length > 0) {
+                data.data.forEach(commande => CommandeCard(commande));
+            } else {
+                emptyState(cmd, 'Aucune commande en cours pour le moment.');
+            }
+        } catch (err) {
+            loader.style.display = 'none';
+            errorState(cmd, err.message, () => charger());
+        }
     },
+
     '#/finish': async () => {
-
-        loader.style.display = 'block'
-        const response = await fetch(`index.php?page=api&action=listecommandes&status=${status3}`);
-        const data = await response.json();
-        loader.style.display = 'none'
-
-        cmd.textContent = '';
-
-        if(data.success && data.data.length > 0){
-            
-            data.data.forEach(data => {
-                CommandeCard(data);
-            });
-        }else{
-                        const p = document.createElement('p')
-            p.textContent = 'Aucune nouvelle commande pour le moment.';
-            p.classList.add('aucune')
-            cmd.appendChild(p)
-        }   
+        loader.style.display = 'block';
+        cmd.innerHTML = '';
+        try {
+            const response = await fetch(`index.php?page=api&action=listecommandes&status=${status3}`);
+            if (!response.ok) throw new Error(`Erreur serveur (${response.status})`);
+            const data = await response.json();
+            loader.style.display = 'none';
+            if (data.success && data.data.length > 0) {
+                data.data.forEach(commande => CommandeCard(commande));
+            } else {
+                emptyState(cmd, 'Aucune commande livrée et payée pour le moment.');
+            }
+        } catch (err) {
+            loader.style.display = 'none';
+            errorState(cmd, err.message, () => charger());
+        }
     }
 }
 

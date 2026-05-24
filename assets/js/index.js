@@ -31,7 +31,7 @@ const catSwiper = new Swiper(".swiper", {
 document.getElementById("copyright").textContent = "Copyright © " + new Date().getFullYear() + " Togomarket. Tous droits réservés.";
 
 
-const Base_url = window.location.origin + '/'
+const Base_url = window.__BASE_URL || (window.location.origin + '/')
 
 
 function convertirTemps(duree_secondes) {
@@ -335,9 +335,7 @@ function createSection(sectionId, fetchurl, categorie) {
 
             if (!pro.annonces || pro.annonces.length === 0) {
                 if (page === 1) {
-                    const div = document.createElement('div');
-                    div.textContent = "Aucune annonce";
-                    content.appendChild(div);
+                    emptyState(content, 'Aucune annonce pour cette catégorie.');
                 }
                 return;
             }
@@ -358,9 +356,9 @@ function createSection(sectionId, fetchurl, categorie) {
             backoff = 800;
 
         } catch (err) {
-            console.error("Erreur load:", err);
-            backoff = Math.min(backoff * 2, maxBackoff);
-            setTimeout(() => loadProducts(currentPage), backoff);
+            if (page === 1) {
+                errorState(content, 'Impossible de charger les annonces.', () => loadProducts(1));
+            }
         } finally {
             loader.style.display = "none";
             loading = false;
@@ -454,8 +452,8 @@ async function  charger(){
     const route = routes[path]
     if(route){
         await route();
-    }else{
-        console.log('erreur')
+    } else {
+        window.location.hash = '#/';
     }
 }
 
@@ -494,7 +492,7 @@ const form = document.getElementById('formr');
         }
 
         // Redirection vers la page de résultats
-        window.location.href = `/search/${encodeURIComponent(query)}`;
+        window.location.href = Base_url + 'search/' + encodeURIComponent(query);
     });
 
 const inputf = document.getElementById('searchInputf');
@@ -511,7 +509,7 @@ const formf = document.getElementById('formrf');
         }
 
         // Redirection vers la page de résultats
-        window.location.href = `/search/${encodeURIComponent(query)}`;
+        window.location.href = Base_url + 'search/' + encodeURIComponent(query);
     });
 
 

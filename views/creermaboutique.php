@@ -39,7 +39,7 @@
           id="formPosition"
           style="display: <?= !empty($boutique) ? 'none' : 'block' ?>;">
         
-        <h2>Création de Boutique<hr></h2>
+        <h2>Création de Boutique</h2>
     <?php
         if (!empty($_SESSION['flash'])) {
             echo '<div class="alert ' . $_SESSION['flash']['type'] . '">';

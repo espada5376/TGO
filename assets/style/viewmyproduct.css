@@ -272,7 +272,7 @@ h1 {
 
 /* === RESPONSIVE === */
 @media screen and (min-width: 480px) {
-    .annonce { width: 42%; }
+    .annonce { width: 18%; }
     .action { display: flex; justify-content: center; gap: 6px; padding-bottom: 8px; }
 }
 

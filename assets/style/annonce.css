@@ -125,6 +125,10 @@
     text-decoration: none;
 }
 
+.info{
+    padding: 5px;
+}
+
 /* Product title */
 .tronqué {
     white-space: nowrap;
@@ -239,7 +243,7 @@ button[name="panier"]:active { background: #FF4017; }
 .content {
     display: flex;
     gap: 14px;
-    justify-content: center;
+    justify-content: start;
     flex-wrap: wrap;
     padding: 0 14px 16px;
 }

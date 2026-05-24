@@ -44,7 +44,7 @@ if (!$page) {
     }
 }
 
-$page = $page ?: 'home';
+$page = $page ? $page : 'home';
 $page = str_replace('-', '_', $page);
 
 

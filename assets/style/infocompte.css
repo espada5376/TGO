@@ -217,6 +217,9 @@ main {
     flex-direction: column;
     justify-content: flex-start;
     gap: 12px;
+    margin: 16px auto;
+    width: calc(100% - 32px);
+    max-width: 780px;
     font-family: 'Poppins', sans-serif;
     flex: 1;
 }

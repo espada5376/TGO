@@ -1,4 +1,4 @@
-const BASE_URL = window.location.origin + '/'
+const BASE_URL = window.__BASE_URL || (window.location.origin + '/')
 
 const retour = document.getElementById("back");
     
@@ -68,7 +68,7 @@ const imgWrapper = document.createElement("div");
 imgWrapper.className = "img-wrapper skeleton";
 
 const img = document.createElement('img')
-img.src = `${BASE_URL}/assets/product/${data.photo_annonce}`
+img.src = `${BASE_URL}assets/product/${data.photo_annonce}`
 img.alt = `${data.titre_annonce}`
 img.loading = "lazy";
 img.decoding = "async";
@@ -132,74 +132,65 @@ const status3 = 'produit livré et payé';
 
 const routes = {
     '#/': async () => {
-    loader.style.display = 'block'
-
-    const response = await fetch(
-        `index.php?page=api&action=listecommandesboutique&status=${status1}`
-    )
-    const data = await response.json()
-
-    loader.style.display = 'none'
-
-    // ✅ Nettoyage systématique
-    cmd.innerHTML = ''
-
-    if (data.success && data.data.length > 0) {
-        data.data.forEach(commande => {
-            CommmandeCard(commande)
-        })
-    } else {
-        const p = document.createElement('p')
-        p.textContent = 'Aucune nouvelle commande pour le moment.'
-        p.classList.add('aucune')
-        cmd.appendChild(p)
-    }
-}
-,
-    '#/cours': async () => {
-        loader.style.display = 'block'
-        const response = await fetch(`index.php?page=api&action=listecommandesboutique&status=${status2}`);
-        const data = await response.json();
-        loader.style.display = 'none'
-
-        cmd.innerHTML = ''
-
-        if(data.success && data.data.length > 0){
-            
-            data.data.forEach(commande => {
-                CommmandeCard(commande);
-            });
-        }else{
-                        const p = document.createElement('p')
-            p.textContent = 'Aucune nouvelle commande pour le moment.';
-            p.classList.add('aucune')
-            cmd.appendChild(p)
-        }  
+        loader.style.display = 'block';
+        cmd.innerHTML = '';
+        try {
+            const response = await fetch(`index.php?page=api&action=listecommandesboutique&status=${status1}`);
+            if (!response.ok) throw new Error(`Erreur serveur (${response.status})`);
+            const data = await response.json();
+            loader.style.display = 'none';
+            if (data.success && data.data.length > 0) {
+                data.data.forEach(commande => CommmandeCard(commande));
+            } else {
+                emptyState(cmd, 'Aucune commande en attente pour le moment.');
+            }
+        } catch (err) {
+            loader.style.display = 'none';
+            errorState(cmd, err.message, () => charger());
+        }
     },
+
+    '#/cours': async () => {
+        loader.style.display = 'block';
+        cmd.innerHTML = '';
+        try {
+            const response = await fetch(`index.php?page=api&action=listecommandesboutique&status=${status2}`);
+            if (!response.ok) throw new Error(`Erreur serveur (${response.status})`);
+            const data = await response.json();
+            loader.style.display = 'none';
+            if (data.success && data.data.length > 0) {
+                data.data.forEach(commande => CommmandeCard(commande));
+            } else {
+                emptyState(cmd, 'Aucune commande en cours pour le moment.');
+            }
+        } catch (err) {
+            loader.style.display = 'none';
+            errorState(cmd, err.message, () => charger());
+        }
+    },
+
     '#/finish': async () => {
-        loader.style.display = 'block'
-        const response = await fetch(`index.php?page=api&action=listecommandesboutique&status=${status3}`);
-        const data = await response.json();
-        loader.style.display = 'none'
-
-        cmd.innerHTML = ''
-        
-
-        if(data.success && data.data.length > 0){
-
-            let CA = 0
-
-            data.data.forEach(commande => {
-                CommmandeCard(commande);
-                CA += commande.prix_unitaire_annonce * commande.quantite_commande;
-            });
-            document.querySelector('.cda').innerHTML = `Chiffres d'Affaires: <strong>${CA} FCFA</strong>`;
-        }else{
-                        const p = document.createElement('p')
-            p.textContent = 'Aucune nouvelle commande pour le moment.';
-            p.classList.add('aucune')
-            cmd.appendChild(p)
-        }   
+        loader.style.display = 'block';
+        cmd.innerHTML = '';
+        try {
+            const response = await fetch(`index.php?page=api&action=listecommandesboutique&status=${status3}`);
+            if (!response.ok) throw new Error(`Erreur serveur (${response.status})`);
+            const data = await response.json();
+            loader.style.display = 'none';
+            if (data.success && data.data.length > 0) {
+                let CA = 0;
+                data.data.forEach(commande => {
+                    CommmandeCard(commande);
+                    CA += commande.prix_unitaire_annonce * commande.quantite_commande;
+                });
+                document.querySelector('.cda').innerHTML = `Chiffres d'Affaires: <strong>${CA} FCFA</strong>`;
+            } else {
+                emptyState(cmd, 'Aucune commande livrée et payée pour le moment.');
+            }
+        } catch (err) {
+            loader.style.display = 'none';
+            errorState(cmd, err.message, () => charger());
+        }
     }
 }
 

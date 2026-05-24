@@ -5,9 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Commandes TogoMarket</title>
     <link rel="stylesheet" href="<?= ASSETS_URL ?>style/boutique.css?v=<?= filemtime(ASSETS_PATH.'style/boutique.css') ?>">
+    <link rel="stylesheet" href="<?= ASSETS_URL ?>style/ui-states.css?v=<?= filemtime(ASSETS_PATH.'style/ui-states.css') ?>">
     <link rel="stylesheet" href="<?= ASSETS_URL ?>style/annonce.css?v=<?= filemtime(ASSETS_PATH.'style/annonce.css') ?>">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <script src="<?= ASSETS_URL ?>js/ui-states.js?v=<?= filemtime(ASSETS_PATH.'js/ui-states.js') ?>" defer></script>
+    <script>window.__BASE_URL = "<?= BASE_URL ?>";</script>
     <script src="<?= ASSETS_URL ?>js/mescommandes.js?v=<?= filemtime(ASSETS_PATH.'js/mescommandes.js') ?>" defer></script>
     <link rel="icon" type="image/svg+xml" href="<?= ASSETS_URL ?>file-(1).svg">
     
@@ -33,8 +38,8 @@
 <body>
     <header>
         <nav>
-        <a class='hstatus' href='/profil'><i class="fa-solid fa-arrow-left"></i></a>
-        <a class='hstatus1' href="/"><span class='tf'>Togo</span>Market</a>
+        <a class='hstatus' href="<?= url('profil') ?>"><i class="fa-solid fa-arrow-left"></i></a>
+        <a class='hstatus1' href="<?= url('') ?>"><span class='tf'>Togo</span>Market</a>
         </nav>
     </header>
 
@@ -65,20 +70,22 @@
 
 
 <script>
-const catSwiper = new Swiper("#cat", {
-  slidesPerView: 3,
-  spaceBetween: 12,
-  loop: false,
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-  breakpoints: {
-    220: {slidesPerView: 1},
-    320: { slidesPerView: 1 },
-    400: { slidesPerView: 2 },
-    1024: { slidesPerView: 3 },
-  },
+document.addEventListener('DOMContentLoaded', () => {
+  new Swiper("#cat", {
+    slidesPerView: 3,
+    spaceBetween: 12,
+    loop: false,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    breakpoints: {
+      220: { slidesPerView: 1 },
+      320: { slidesPerView: 1 },
+      400: { slidesPerView: 2 },
+      1024: { slidesPerView: 3 },
+    },
+  });
 });
 </script>
 

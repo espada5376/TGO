@@ -195,7 +195,6 @@ h1 {
 .contenu {
     display: flex;
     gap: 32px;
-    padding: 0 20px 40px;
 }
 
 @media (max-width: 810px) {
@@ -205,6 +204,9 @@ h1 {
 .formulaire {
     margin: 0;
     flex: 1;
+    margin: 16px auto;
+    width: calc(100% - 32px);
+    max-width: 780px;
 }
 
 form {

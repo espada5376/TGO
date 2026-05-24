@@ -1,0 +1,70 @@
+/* ============================================
+   TOGOMARKET - ui-states.css
+   Composants visuels : état vide & état erreur.
+   Utilisé sur : homepage, boutique, mescommandes
+   ============================================ */
+
+.state-empty,
+.state-error {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 52px 24px;
+    width: 100%;
+    text-align: center;
+    gap: 10px;
+    animation: uiStateIn 0.3s ease both;
+}
+
+@keyframes uiStateIn {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.state-empty .state-icon {
+    width: 64px;
+    height: 64px;
+    color: #D1D5DB;
+}
+
+.state-error .state-icon {
+    width: 64px;
+    height: 64px;
+    color: #FF4017;
+}
+
+.state-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #374151;
+    margin: 4px 0 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.state-msg {
+    font-size: 13px;
+    color: #9CA3AF;
+    margin: 0;
+    max-width: 280px;
+    line-height: 1.5;
+    font-family: 'Poppins', sans-serif;
+}
+
+.state-retry {
+    margin-top: 10px;
+    background: #FF4017;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    padding: 10px 28px;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+    box-shadow: 0 4px 14px rgba(255, 64, 23, 0.25);
+}
+
+.state-retry:hover  { background: #E5370F; }
+.state-retry:active { background: #CC2F0B; transform: scale(0.97); }

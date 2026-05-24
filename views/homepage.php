@@ -35,9 +35,13 @@
 <link rel="icon" type="image/svg+xml" href="<?= ASSETS_URL ?>file-(1).svg">
 <link rel="stylesheet" href="<?= ASSETS_URL ?>style/index.css?v=<?= filemtime(ASSETS_PATH.'style/index.css') ?>">
 <link rel="stylesheet" href="<?= ASSETS_URL ?>style/annonce.css?v=<?= filemtime(ASSETS_PATH.'style/annonce.css') ?>">
+<link rel="stylesheet" href="<?= ASSETS_URL ?>style/ui-states.css?v=<?= filemtime(ASSETS_PATH.'style/ui-states.css') ?>">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="<?= url('swiper-bundle.css') ?>">
-<script src="<?= url('swiper-bundle.js') ?>" defer></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+<script src="<?= ASSETS_URL ?>js/ui-states.js?v=<?= filemtime(ASSETS_PATH.'js/ui-states.js') ?>" defer></script>
+<script>window.__BASE_URL = "<?= BASE_URL ?>";</script>
 <script src="<?= ASSETS_URL ?>js/index.js?v=<?= filemtime(ASSETS_PATH.'js/index.js') ?>" defer></script>
     
 <script>
@@ -144,7 +148,6 @@
 
     <br />
 
-</p>
 <section class='' id='section1'>
     <div class='content'><span>Aucune annonce trouvé !</span></div>
     <div class="loader"></div>

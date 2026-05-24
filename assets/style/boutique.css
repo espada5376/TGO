@@ -126,6 +126,11 @@ main {
 }
 
 /* === SWIPER (STATUS TABS) === */
+#cat {
+    height: fit-content;
+    position: relative;
+}
+
 .swiper-wrapper {
     font-family: 'Poppins', sans-serif;
     width: 100%;
@@ -166,6 +171,9 @@ main {
     justify-content: center !important;
     align-items: center !important;
     cursor: pointer;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    margin-top: 0 !important;
 }
 
 .swiper-button-prev::after, .swiper-button-next::after {
@@ -372,6 +380,8 @@ button[type="button"]:active { transform: translateY(2px); }
 
 .aucune { text-align: center; color: #6B7280; padding: 40px 0; }
 
+/* UI states → voir ui-states.css */
+
 /* === TRONQUÉ === */
 .tronqué {
     max-width: 100%;
@@ -384,11 +394,15 @@ button[type="button"]:active { transform: translateY(2px); }
     text-overflow: ellipsis;
 }
 
-.boutique {
+/* Shop-strip bar (direct child of body — scoped to avoid conflict with annonce.css .boutique) */
+body > .boutique {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 6px;
+    gap: 10px;
+    padding: 4px 16px 12px;
+    width: 100%;
+    flex-wrap: wrap;
 }
 
 .info button {

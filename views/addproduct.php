@@ -154,12 +154,13 @@
         decoding="async"
         fetchpriority="low"
       >
-    </div>
-
-    <div class="duré">
+      <div class="duré">
       <i class="fa-regular fa-clock"></i>
       DUREE
     </div>
+    </div>
+
+
   </div>
 
   <div class="informationannonce">
@@ -195,7 +196,7 @@
     data-category="ID_CATEGORIE"
     data-price="PRIX"
   >
-    <i class="fa-solid fa-basket-shopping"></i>
+
     Ajouter au panier 
     <span class="panier-count"></span>
   </button>
