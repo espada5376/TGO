@@ -8,7 +8,7 @@ $_scheme = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https' 
 $_local  = in_array(explode(':', $_host)[0], ['localhost', '127.0.0.1']);
 
 define('BASE_URL',   $_local
-    ? 'http://localhost/TogoMarket/TGO/'
+    ? 'http://localhost:8000/'
     : $_scheme . '://' . $_host . '/');
 
 define('ASSETS_URL',  BASE_URL . 'assets/');

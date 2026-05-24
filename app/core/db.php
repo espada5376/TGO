@@ -1,8 +1,8 @@
 <?php
 $host = 'localhost';
-$dbname = 'tg';
+$dbname = 'TG';
 $user = 'root';
-$password = '';
+$password = 'root123';
 
 try {
     $conn = new PDO(

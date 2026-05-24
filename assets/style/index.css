@@ -80,6 +80,7 @@ header nav {
 .containerf {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: 12px;
     padding: 0 20px;
     height: 68px;
@@ -137,6 +138,45 @@ header nav {
 }
 
 #searchInput::placeholder { color: var(--muted); }
+
+
+.searchf {
+    display: flex;
+    width: 100%;
+    max-width: 520px;
+    margin: 0 auto;
+    border: 2px solid var(--border);
+    border-radius: var(--radius-btn);
+    overflow: hidden;
+    background: var(--white);
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.searchf:focus-within {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(255,64,23,0.10);
+}
+
+.searchf form { display: flex; width: 100%; }
+
+#searchInputf {
+    flex: 1;
+    min-width: 0;
+    padding: 0 16px;
+    height: 44px;
+    border: none;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+    color: var(--text);
+    background: transparent;
+}
+
+#searchInputf::placeholder { color: var(--muted); }
+
+
+
+
 
 .cats {
     padding: 0 14px;
@@ -253,7 +293,7 @@ header nav {
 .searchf {
     display: none;
     width: 100%;
-    padding: 0 16px 12px;
+    margin-bottom: 10px;
 }
 
 .searchf-inner {
@@ -392,20 +432,6 @@ h1 {
     text-align: left;
 }
 
-.pluscat {
-    font-size: 12px;
-    font-weight: 600;
-    color: var(--primary);
-    background: #FFF0EC;
-    border-radius: var(--radius-pill);
-    padding: 5px 14px;
-    text-decoration: none;
-    transition: background 0.2s;
-    white-space: nowrap;
-}
-
-.pluscat:hover { background: #FFE4DC; }
-
 .boss {
     display: flex;
     align-items: center;
@@ -459,7 +485,6 @@ h1 {
     width: 34px !important;
     height: 34px !important;
     min-width: 34px;
-    background: var(--bg-2) !important;
     color: var(--text-2) !important;
     border-radius: 50% !important;
     margin: 0;
@@ -467,8 +492,6 @@ h1 {
     transition: background 0.2s;
 }
 
-.swiper-button-prev:hover,
-.swiper-button-next:hover { background: var(--border) !important; }
 
 .swiper-button-prev::after,
 .swiper-button-next::after {

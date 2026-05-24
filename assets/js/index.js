@@ -17,9 +17,10 @@ const catSwiper = new Swiper(".swiper", {
     prevEl: ".swiper-button-prev",
   },
   breakpoints: {
-    220: {slidesPerView: 1},
-    320: { slidesPerView: 2 },
-    400: { slidesPerView: 3 },
+    370: {slidesPerView: 1},
+    380: { slidesPerView: 2 },
+    534: { slidesPerView: 2 },
+    640: { slidesPerView: 3 },
     1024: { slidesPerView: 5 },
   },
   rtl: false,
@@ -93,7 +94,7 @@ function createAnnonce(ann) {
     linkImg.href = commandUrl(ann.id_annonce, ann.titre_annonce);
 
     const imgWrapper = document.createElement("div");
-imgWrapper.className = "img-wrapper skeleton";
+    imgWrapper.className = "img-wrapper skeleton";
     	
     const img = document.createElement("img");
     img.loading = "lazy";
@@ -121,7 +122,7 @@ linkImg.appendChild(imgWrapper);
     const duré = document.createElement('div')
     duré.innerHTML = `<i class="fa-regular fa-clock"></i> ${convertirTemps(ann.duree_secondes)}`
     duré.classList.add('duré')
-    linkImg.appendChild(duré)
+    imgWrapper.appendChild(duré)
 
     const info = document.createElement("div");
     info.classList.add("informationannonce");
@@ -269,7 +270,7 @@ async function applyLikesOnClick(btn) {
 });
         } else {
             if(confirm(data.message)){
-                window.location.href = 'index.php?page=connexion'
+                window.location.href = Base_url + 'connexion'
             }
 
             btn.classList.remove('like');

@@ -107,10 +107,7 @@
         
     </header>
 
-    <main class='main'>
-        <p class='bienvenue'>Bienvenue sur <span class='tf' >Togo</span>Market</p>
-        <h1><span class='sp tf'>L'avenir du <span class='tf'>commerce</span> en <span class='tf'>ligne</span> au <span class='tf'>TOGO</span></span></h1>
-    </main>
+
 
 
 <!-- TRIER LES PRODUITS PAR CATEGORIE-->
@@ -120,7 +117,6 @@
 <div id='cat'>
     <div class='catdiv'>
         <h2 >Catégories</h2>
-        <a href='<?= url('search') ?>' class='pluscat'>+ catégories</a>
     </div>
     <div class='boss'>
         <div class="swiper-button-prev"></div>

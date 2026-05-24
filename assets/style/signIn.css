@@ -248,8 +248,8 @@ form button:active { background: #CC2F0B; transform: scale(0.99); }
 
 /* === INFO SECTION === */
 .info { width: 100%; }
-.info h2 { width: 100%; text-align: left; margin: 12px 0 8px; font-size: 16px; color: #111827; }
-.info p { margin: 8px 0; font-size: 14px; color: #6B7280; }
+.info h2 { width: 100%; text-align: left; margin: 12px 0 8px; font-size: 16px; color: #111827; text-align: center;}
+.info p { margin: 8px 0; font-size: 14px; color: #6B7280; text-align: center; }
 
 /* === FOOTER === */
 footer {
